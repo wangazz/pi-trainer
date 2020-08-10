@@ -12,7 +12,7 @@ window.addEventListener('load', () => {
 
 document.addEventListener('keypress', (e) => {
     const digit = e.key;
-    if (/^([0-9])$/.test(digit)) {
+    if (/^[0-9]$/.test(digit)) {
         const offset = 2;
         const index = app.digitCount + offset;
         if (digit === pi.charAt(index)) {
@@ -26,6 +26,6 @@ document.addEventListener('keypress', (e) => {
     }
 });
 
-resetButton.addEventListener('click', (e) => {
+resetButton.addEventListener('click', () => {
     app.reset();
 });

@@ -1,0 +1,19 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+#app {
+    max-width: 960px;
+}
+#app h1 {
+    text-align: center;
+    padding: 4rem;
+}
+
+#pi {
+    font-size: larger;
+}
+
+.stats {
+    padding: 2rem 0;
+}
