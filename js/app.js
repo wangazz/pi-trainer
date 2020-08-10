@@ -1,6 +1,6 @@
 export class App {
-    digitCount = 2;
-    errorCount = 0;
+    digitCount;
+    errorCount;
 
     constructor() {
         this.reset();
