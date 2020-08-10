@@ -1,31 +1,31 @@
+import { App } from './app.js';
+
+const app = new App();
 let pi;
-let digits = 2;
-let offset = 2;
-let errors = 0;
+let resetButton = document.getElementById('reset');
 
 window.addEventListener('load', () => {
     fetch('./static/pi_dec_1m.txt')
         .then((response) => response.text())
-        .then((text) => {
-            pi = text;
-        });
+        .then((text) => (pi = text));
 });
 
 document.addEventListener('keypress', (e) => {
     const digit = e.key;
     if (/^([0-9])$/.test(digit)) {
-        const index = digits + offset;
+        const offset = 2;
+        const index = app.digitCount + offset;
         if (digit === pi.charAt(index)) {
-            console.log('yay');
-            appendText(digit);
-            digits += 1;
+            app.updatePi(digit);
+            app.digitCount += 1;
+            app.updateScore();
         } else {
-            errors += 1;
+            app.errorCount += 1;
+            app.updateErrors();
         }
     }
 });
 
-const appendText = (text) => {
-    const p = document.getElementById('#pi');
-    p.innerText += text;
-};
+resetButton.addEventListener('click', (e) => {
+    app.reset();
+});
