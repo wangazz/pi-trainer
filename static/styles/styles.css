@@ -12,6 +12,7 @@
 
 #pi {
     font-size: larger;
+    word-wrap: break-word;
 }
 
 .stats {
