@@ -4,7 +4,7 @@
     "author": "Andy Wang",
     "license": "MIT",
     "scripts": {
-        "start": "live-server --host=127.0.0.1",
+        "start": "node js/server.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "engines": {
