@@ -1,6 +1,6 @@
 {
     "name": "pi-trainer",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "author": "Andy Wang",
     "license": "MIT",
     "scripts": {
@@ -11,8 +11,5 @@
     },
     "engines": {
         "node": "10.16.3"
-    },
-    "dependencies": {
-        "live-server": "^1.2.1"
     }
 }
