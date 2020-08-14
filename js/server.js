@@ -18,7 +18,7 @@ http.createServer((request, response) => {
             contentType = 'text/css';
             break;
     }
-    const filePath = './index.html';
+    // const filePath = './index.html';
     path.exists(filePath, function (exists) {
         if (exists) {
             fs.readFile(filePath, function (error, content) {
