@@ -4,8 +4,10 @@ Web-based pi memorisation game.
 
 Features:
 
--   Score showing number of digits correctly entered
+-   Support for up to 1 million digits
+-   Score showing digits correctly recalled
 -   Error counter
+-   Hint button for the next digit
 
 ## Environments
 
