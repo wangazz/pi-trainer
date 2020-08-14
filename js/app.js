@@ -4,6 +4,7 @@ export class App {
     hintCount;
 
     constructor() {
+        document.getElementById('spinner-container').remove();
         this.reset();
     }
 
