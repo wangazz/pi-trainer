@@ -1,17 +1,18 @@
 import { App } from './app.js';
 
-const app = new App();
 const offset = 2;
 
 const hintButton = document.getElementById('hint');
 const resetButton = document.getElementById('reset');
 
+let app;
 let pi;
 
-window.addEventListener('load', () => {
-    fetch('./static/pi_dec_1m.txt')
+window.addEventListener('load', async () => {
+    await fetch('./static/pi_dec_1m.txt')
         .then((response) => response.text())
         .then((text) => (pi = text));
+    app = new App();
 });
 
 document.addEventListener('keypress', (e) => {
