@@ -1,6 +1,7 @@
 export class App {
     digitCount;
     errorCount;
+    hintCount;
 
     constructor() {
         this.reset();
@@ -17,6 +18,9 @@ export class App {
         this.digitCount = 2;
         this.updateScore();
 
+        this.hintCount = 0;
+        this.updateHints();
+
         this.resetPi();
     }
 
@@ -29,6 +33,11 @@ export class App {
     updateErrors() {
         const $el = document.getElementById('errors');
         $el.innerText = `Errors: ${this.errorCount}`;
+    }
+
+    updateHints() {
+        const $el = document.getElementById('hints');
+        $el.innerText = `Hints: ${this.hintCount}`;
     }
 
     updatePi(char) {
