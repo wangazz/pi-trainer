@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 * {
     font-family: 'Open Sans', sans-serif;
 }
@@ -17,4 +19,19 @@
 
 .stats {
     padding: 2rem 0;
+}
+
+footer {
+    font-size: 0.8em;
+    padding: 2rem 2rem 0rem;
+    text-align: center;
+}
+footer .fa {
+    color: black;
+    font-size: 2.5em;
+    padding: 20px;
+    width: 60px;
+}
+footer .fa:hover {
+    text-decoration: none;
 }
