@@ -1,15 +1,16 @@
+const fs = require('fs');
 const http = require('http');
-var fs = require('fs');
-var path = require('path');
+const path = require('path');
+const port = process.env.PORT || 5000;
 
 http.createServer((request, response) => {
-    console.log('request starting for ');
-    console.log(request);
-    var filePath = '.' + request.url;
-    if (filePath == './') filePath = './index.html';
-    console.log(filePath);
-    var extname = path.extname(filePath);
-    var contentType = 'text/html';
+    let filePath = '.' + request.url;
+    if (filePath == './') {
+        filePath = './index.html';
+    }
+
+    let contentType;
+    const extname = path.extname(filePath);
     switch (extname) {
         case '.js':
             contentType = 'text/javascript';
@@ -17,11 +18,12 @@ http.createServer((request, response) => {
         case '.css':
             contentType = 'text/css';
             break;
+        default:
+            contentType = 'text/html';
+            break;
     }
-    // const filePath = './index.html';
-    // path.exists(filePath, function (exists) {
-    //     if (exists) {
-    fs.readFile(filePath, function (error, content) {
+
+    fs.readFile(filePath, (error, content) => {
         if (error) {
             response.writeHead(500);
             response.end();
@@ -30,11 +32,6 @@ http.createServer((request, response) => {
             response.end(content, 'utf-8');
         }
     });
-    // } else {
-    //     response.writeHead(404);
-    //     response.end();
-    // }
-    // });
-}).listen(process.env.PORT || 5000);
+}).listen(port);
 
-console.log('Server running at http://127.0.0.1:5000/');
+console.log(`Server listening on http://127.0.0.1:${port}/`);
