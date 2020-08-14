@@ -4,6 +4,8 @@
     "author": "Andy Wang",
     "license": "MIT",
     "scripts": {
+        "heroku:deploy": "git push heroku master",
+        "heroku:start": "heroku local web",
         "start": "node js/server.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },

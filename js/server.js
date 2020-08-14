@@ -9,17 +9,22 @@ http.createServer((request, response) => {
         filePath = './index.html';
     }
 
-    let contentType;
+    let contentType = 'text/plain';
     const extname = path.extname(filePath);
     switch (extname) {
-        case '.js':
-            contentType = 'text/javascript';
-            break;
         case '.css':
             contentType = 'text/css';
             break;
-        default:
+        case '.html':
             contentType = 'text/html';
+            break;
+        case '.js':
+            contentType = 'text/javascript';
+            break;
+        case '.svg':
+            contentType = 'image/svg+xml';
+            break;
+        default:
             break;
     }
 
