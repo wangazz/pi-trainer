@@ -13,6 +13,7 @@ window.addEventListener('load', async () => {
         .then((response) => response.text())
         .then((text) => (pi = text));
     app = new App();
+    afterLoad();
 });
 
 document.addEventListener('keypress', (e) => {
@@ -43,3 +44,12 @@ hintButton.addEventListener('click', () => {
 resetButton.addEventListener('click', () => {
     app.reset();
 });
+
+const afterLoad = () => {
+    document.getElementById('spinner-container').remove();
+    document.querySelectorAll('button').forEach((button) => {
+        if (button.classList.contains('invisible')) {
+            button.classList.remove('invisible');
+        }
+    });
+};
