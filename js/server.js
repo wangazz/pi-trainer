@@ -9,7 +9,7 @@ http.createServer((request, response) => {
     // if (filePath == './') filePath = './index.html';
     // console.log(filePath);
     // var extname = path.extname(filePath);
-    // var contentType = 'text/html';
+    var contentType = 'text/html';
     // switch (extname) {
     //     case '.js':
     //         contentType = 'text/javascript';
